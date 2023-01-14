@@ -1,0 +1,28 @@
+{% extends 'prompts/base.html' %}
+{% block content %}
+<html>
+<style>
+    body{
+        color:aliceblue;
+        text-align: center
+    }
+</style>
+<body>
+    <h3>
+        {% for ents in ents %}
+            <p>{{ ents.prompt }}</p>
+        {% endfor %}
+    </h3>
+</body>
+
+<div class="form-group"></div>
+<form method="Entry">
+    <!-- {{ ents.body }} -->
+    <!-- {{ ents.prompt }} -->
+    {% csrf_token %}
+    {{ form.media }} 
+    {{ form.as_p }}
+    <button class="btn btn-secondary">Post</button>
+</div>
+</html>
+{% endblock %}}
