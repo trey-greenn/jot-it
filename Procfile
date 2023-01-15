@@ -1,0 +1,1 @@
+web: gunicorn jot_it.wsgi
