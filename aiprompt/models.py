@@ -5,7 +5,5 @@ from django.db import models
 
 
 class Prompt(models.Model):
-    prompt = models.TextField(default="trey")
+    prompts = models.TextField(default="trey")
  
-    def __str__(self):
-        return self.prompt

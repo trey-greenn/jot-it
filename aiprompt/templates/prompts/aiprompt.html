@@ -12,5 +12,8 @@
 </html>
 
 <!-- Need a button that says add entry and refresh -->
+{% for prompt in prompt %}
+<p>{{ prompt.prompts }}</p>
+{% endfor %}
 
 {% endblock %}

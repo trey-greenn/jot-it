@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.views.generic import ListView
 from .models import Prompt
 
 # Create your views here.
@@ -12,11 +11,10 @@ from .models import Prompt
 #     # ordering = ['-id']
 
 def index(request):
-    prompts = Prompt.objects.all()
-    # paginate_by = 1, now how can I paginate the pages
-    return render(request, "prompts/aiprompt.html", {"prompts" : prompts})
+    prompt = Prompt.objects.all()
+    return render(request, "prompts/aiprompt.html", {"prompt" : prompt})
 
 
-# print(Prompt.objects.all())
+
 
 

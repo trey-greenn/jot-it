@@ -4,6 +4,6 @@ from . import views
 # from .views import AIPromptView
 urlpatterns = [
     # path("", views.home, name="home")
-    path("", views.Prompt, name="aiprompt")
+    path("", views.index, name="home")
 
 ]
