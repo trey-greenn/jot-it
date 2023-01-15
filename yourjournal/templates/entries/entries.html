@@ -7,22 +7,18 @@
         text-align: center
     }
 </style>
-<body>
+<div>
     <h3>
-        {% for ents in ents %}
-            <p>{{ ents.prompt }}</p>
+        {% for pmt in prompt %}
+            <p>{{ pmt.prompt }}</p>
         {% endfor %}
     </h3>
-</body>
-
-<div class="form-group"></div>
-<form method="Entry">
-    <!-- {{ ents.body }} -->
-    <!-- {{ ents.prompt }} -->
-    {% csrf_token %}
-    {{ form.media }} 
-    {{ form.as_p }}
-    <button class="btn btn-secondary">Post</button>
 </div>
+<form method="POST" action="entries.html">
+    {{ form.media }}
+    {{form.body}}
+    <button class="btn btn-secondary">Post</button>
+</form>
+
 </html>
 {% endblock %}}

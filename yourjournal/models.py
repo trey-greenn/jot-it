@@ -12,8 +12,7 @@ class Entry(models.Model):
     body = RichTextField(blank=True, null=True)
 
      
-    def __str__(self):
-        return self.prompt
+
 
 
  

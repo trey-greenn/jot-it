@@ -1,8 +1,8 @@
 from django.urls import path, include
-# from .views import indexx
+from . import views
 
-from .views import EditEntryView
+# from .views import EditEntryView
 urlpatterns = [
     # path("", indexx)
-    path("", EditEntryView.as_view(), name="entries")
+    path("", views.indx, name="prompt")
 ]
