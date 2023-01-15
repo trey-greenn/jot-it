@@ -9,7 +9,7 @@ from ckeditor.fields import RichTextField
 
 class Entry(models.Model):
     prompt = models.TextField(default="trey")
-    body = RichTextField(blank=True, null=True)
+    body = RichTextField(blank=True, null=False)
 
      
 
