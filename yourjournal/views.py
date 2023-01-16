@@ -17,7 +17,8 @@ from aiprompt.models import Prompt
 
 def indx(request):
     script = Entry.objects.all()
-    return render(request, "entries/entries.html", {"script" : script})
+    form = PostEntry()
+    return render(request, "entries/entries.html", {"script" : script, "form": form})
 
 
 # def PromptList(request):

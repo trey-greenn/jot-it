@@ -5,6 +5,7 @@ from ckeditor.fields import RichTextField
 
 class Entry(models.Model):
     write = models.TextField(default="trey")
+    body = RichTextField(blank=True, null=True)
 
     
      

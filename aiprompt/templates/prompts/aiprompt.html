@@ -6,14 +6,46 @@
         color:aliceblue;
         text-align: center
     }
+    .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid rgb(0, 0, 0);
+    align-self: center;
+    background-color: #ddd;
+    }
+    .pagination a.active {
+    background-color: #4b00ff;
+    color: white;
+    border: 1px solid #4b00ff;
+    }
+    .pagination a:hover:not(.active) {background-color: #ddd;}
 </style>
 
 
 </html>
 
 <!-- Need a button that says add entry and refresh -->
-{% for prompt in prompt %}
-<p>{{ prompt.prompts }}</p>
+{% for page_obj in page_obj %}
+<p>{{ page_obj.prompts }}</p>
 {% endfor %}
+
+<ul div class = "pagination" >
+    {% if page_obj.has_previous %}
+        <a href="?page=1"> First</a>
+        <a href="?page={{ page_obj.previous_page_number }}"> Previous</a>
+    {% endif %} 
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number}}" >Next</a>
+        <a href="?page={{ page_obj.paginator.num_pages}}">Last</a>
+    {% endif %}
+</ul>
 
 {% endblock %}

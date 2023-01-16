@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Prompt
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -12,7 +13,11 @@ from .models import Prompt
 
 def index(request):
     prompt = Prompt.objects.all()
-    return render(request, "prompts/aiprompt.html", {"prompt" : prompt})
+    p = Paginator(prompt, 1)
+    page_number = request.GET.get('page')
+    page_obj = p.get_page(page_number)
+ 
+    return render(request, "prompts/aiprompt.html", {"prompt": prompt, "page_obj" : page_obj})
 
 
 
