@@ -8,5 +8,6 @@ class EditPrompt(forms.ModelForm):
 
         widgets = {
             'prompt' : forms.Textarea(attrs={'class': 'form-control'})
-
         }
+
+

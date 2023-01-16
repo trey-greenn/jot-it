@@ -9,8 +9,11 @@ from ckeditor.fields import RichTextField
 
 class Entry(models.Model):
     prompt = models.TextField(default="trey")
-    body = RichTextField(blank=True, null=False)
-
+    body = RichTextField(blank=True, null=True)
+    
+    @property
+    def entry_id(self):
+        return self.id
      
 
 
