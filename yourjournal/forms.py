@@ -4,8 +4,8 @@ from .models import Entry
 class PostEntry(forms.ModelForm):
     class Meta:
         model = Entry
-        fields = ('prompts',) 
+        fields = ('write',) 
 
         widgets = {
-            'prompts' : forms.Textarea(attrs={'id': 'common_input_val','class': 'form-control'})
+            'write' : forms.Textarea(attrs={'id': 'common_input_val','class': 'form-control'})
         }

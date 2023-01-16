@@ -4,7 +4,7 @@ from ckeditor.fields import RichTextField
 
 
 class Entry(models.Model):
-    prompts = models.TextField(default="trey")
+    write = models.TextField(default="trey")
 
     
      
