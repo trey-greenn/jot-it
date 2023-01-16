@@ -8,12 +8,10 @@ from ckeditor.fields import RichTextField
 
 
 class Entry(models.Model):
+    id = models.AutoField(primary_key=True)
     prompt = models.TextField(default="trey")
     body = RichTextField(blank=True, null=True)
     
-    @property
-    def entry_id(self):
-        return self.id
      
 
 
